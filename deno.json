@@ -1,0 +1,10 @@
+{
+    "imports": {
+      "$std/": "https://deno.land/std@0.213.0/"
+    },
+    "tasks": {
+      "dev": "deno run -A --watch src/hello.ts",
+      "test": "deno test src/person_test.ts",
+      "express": "deno run -A src/server.js"
+    }
+  }
