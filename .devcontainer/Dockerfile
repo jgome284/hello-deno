@@ -42,11 +42,13 @@ RUN pip install --upgrade pip
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python3 -m pip install -r requirements.txt
 
-# Force install the deno jupyter kernal
-RUN deno jupyter --unstable --install
-
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Install unzip utility used for deno upgrade
+RUN apt-get install unzip && \
+    # Upgrade to latest deno version
+    deno upgrade && \
+    # Force install the deno jupyter kernal
+    # ... if this fails, it means that the latest deno version provides a stable jupyter kernal, yay! 🥳
+    deno jupyter --unstable --install
 
 # Check deno version when the container launches
-CMD ["deno, -v"]
+CMD ["deno, -V"]
