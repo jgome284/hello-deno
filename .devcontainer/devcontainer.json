@@ -75,7 +75,7 @@
 		}
 	},
 	// Uncomment the next line to run commands after the container is created.
-	"postCreateCommand": "echo 'Hello World!'",
+	"postCreateCommand": ["deno", "-V"],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
