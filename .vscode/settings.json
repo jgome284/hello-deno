@@ -1,0 +1,11 @@
+{
+    // Enable Deno
+    "deno.enable": true,
+    // Configure Markdown Lint
+    "markdownlint.config": {
+        // Enable default settings
+        "default": true,
+        // Allow in-line HTML
+        "MD033": false
+    }
+}
